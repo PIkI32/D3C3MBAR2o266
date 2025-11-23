@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <title>Decembar 2026</title>
+    <style>
+        /* Osnovni stil */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            background: #87CEFA; /* plava pozadina */
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1 {
+            margin-top: 50px;
+            font-size: 50px;
+            text-shadow: 0 0 5px black;
+        }
+
+        p {
+            font-size: 22px;
+            width: 75%;
+            margin: auto;
+            line-height: 1.5;
+            text-shadow: 0 0 5px black;
+        }
+
+        /* Slika jelke */
+        .jelka {
+            margin-top: 20px;
+            width: 50%;       /* zauzima polovinu širine ekrana */
+            max-width: 300px; /* nikad šira od 300px */
+            height: auto;     
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Snijeg */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 1em;
+            user-select: none;
+            pointer-events: none;
+            z-index: 9999;
+            animation-name: fall;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0px) }
+            100% { transform: translateY(100vh) }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dobrodošao u Decembar!</h1>
+
+    <p>
+        Decembar je mjesec zime, snijega i praznika.  
+        Ljudi ukrašavaju jelke, daruju poklone i uživaju u prazničnoj atmosferi.  
+        Ovo je najčarobniji mjesec u godini kada sve oko nas sjaji i miriše na zimu.
+    </p>
+
+    <!-- Jelka okicena -->
+    <<img class="jelka" src="b0a78665-b32a-4171-a3da-7929d347d0e2.png" alt="Okićena jelka">
+
+
+    <!-- Padajući snijeg -->
+    <script>
+        const snowCount = 50; // broj pahuljica
+        for(let i=0; i<snowCount; i++){
+            let snow = document.createElement('div');
+            snow.className = 'snowflake';
+            snow.style.left = Math.random() * window.innerWidth + 'px';
+            snow.style.fontSize = (10 + Math.random() * 20) + 'px';
+            snow.style.animationDuration = (5 + Math.random() * 5) + 's';
+            snow.style.opacity = Math.random();
+            snow.textContent = '❄';
+            document.body.appendChild(snow);
+        }
+    </script>
+
+</body>
+</html>
